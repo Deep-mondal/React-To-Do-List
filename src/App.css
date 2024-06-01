@@ -1,92 +1,144 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-* {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Global Styles */
 body {
-  background: #8758ff;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff6a6a, #ffd16a);
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.App {
-  text-align: center;
+  height: 100vh;
+  margin: 0;
 }
 
 h1 {
+  text-align: center;
   color: #fff;
-  margin-bottom: 0.5rem;
-  font-size: 1.75rem;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-.TodoWrapper {
-  background: #1A1A40;
-  margin-top: 5rem;
-  padding: 2rem;
-  border-radius: 5px;
-}
-
-.TodoForm {
+div {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: slideIn 1s ease-out;
+  max-width: 500px;
   width: 100%;
-  margin-bottom: 1rem;
 }
 
-.todo-input {
-  outline: none;
-  background: none;
-  border: 1px solid #8758ff;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 300px;
-  color: #fff;
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
 }
 
-.todo-input::placeholder {
-  color: #ffffff4d;
+input[type="text"]:focus {
+  border-color: #ff6a6a;
+  box-shadow: 0 0 8px rgba(255, 106, 106, 0.5);
 }
 
-.todo-btn {
-  background: #8758ff;
+button {
+  background: #ff6a6a;
   color: #fff;
   border: none;
-  padding: 0.55rem;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
 }
 
-.Todo {
+button:hover {
+  background: #ffd16a;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #8758ff;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+li span {
+  flex-grow: 1;
+}
+
+li button {
+  background: transparent;
+  color: #ff6a6a;
+  border: 1px solid #ff6a6a;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+li button:hover {
+  background: #ff6a6a;
   color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
-  margin-bottom: 1rem;
 }
 
-.fa-trash {
-  margin-left: 0.75rem;
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.incompleted {
-  color: #fff;
-  cursor: pointer;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.completed {
-  color: #c5aeff;
-  text-decoration: line-through;
-  cursor: pointer;
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.edit-icon,
-.delete-icon {
-  cursor: pointer;
+/* Responsive Design */
+@media (max-width: 600px) {
+  div {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  input[type="text"] {
+    width: 75%;
+  }
 }
- 

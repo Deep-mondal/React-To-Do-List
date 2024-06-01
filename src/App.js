@@ -1,10 +1,11 @@
+import React from 'react';
 import './App.css';
-import { TodoWrapper } from './components/TodoWrapper';
+import ToDo from './ToDo';
 
 function App() {
   return (
     <div className="App">
-      <TodoWrapper  />
+      <ToDo />
     </div>
   );
 }
